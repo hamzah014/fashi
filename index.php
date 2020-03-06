@@ -7,7 +7,8 @@
     <meta name="keywords" content="Fashi, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fashi | Template</title>
+    <link rel="shortcut icon" href="https://pluspng.com/img-png/avengers-logo-png-avengers-logo-png-1376.png">
+    <title>ANNE LIPPIE HOUSE</title>
 
     <?php include('header_link.php'); ?>
 
@@ -26,28 +27,18 @@
                 <div class="ht-left">
                     <div class="mail-service">
                         <i class=" fa fa-envelope"></i>
-                        hello.colorlib@gmail.com
+                        annelippehouse@gmail.com
                     </div>
                     <div class="phone-service">
                         <i class=" fa fa-phone"></i>
-                        +65 11.188.888
+                        03 26544 545
                     </div>
                 </div>
                 <div class="ht-right">
-                    <a href="#" class="login-panel"><i class="fa fa-user"></i>Login</a>
-                    <div class="lan-selector">
-                        <select class="language_drop" name="countries" id="countries" style="width:300px;">
-                            <option value='yt' data-image="img/flag-1.jpg" data-imagecss="flag yt"
-                                data-title="English">English</option>
-                            <option value='yu' data-image="img/flag-2.jpg" data-imagecss="flag yu"
-                                data-title="Bangladesh">German </option>
-                        </select>
-                    </div>
                     <div class="top-social">
                         <a href="#"><i class="ti-facebook"></i></a>
                         <a href="#"><i class="ti-twitter-alt"></i></a>
-                        <a href="#"><i class="ti-linkedin"></i></a>
-                        <a href="#"><i class="ti-pinterest"></i></a>
+                        <a href="#"><i class="ti-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -64,19 +55,12 @@
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-5">
-                        <!-- <div class="advanced-search">
-                            <button type="button" class="category-btn">All Categories</button>
-                            <form action="#" class="input-group">
-                                <input type="text" placeholder="What do you need?">
-                                <button type="button"><i class="ti-search"></i></button>
-                            </form>
-                        </div> -->
                     </div>
                     <div class="col-lg-3 text-right col-md-3">
                         <ul class="nav-right">
                             <li class="cart-icon"><a href="#">
-                           Hi,Hamzah! <i class="fa fa-user"></i>
-                                    
+                                    Hi,Hamzah!
+                                    <i class="fa fa-user"></i>
                                     <span><i class="fa fa-circle text-success"></i></span>
                                     
                                 </a>
