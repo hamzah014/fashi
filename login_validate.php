@@ -6,7 +6,7 @@
         $password = $_POST['password'];
 
         //print($username . " - " . $password);
-
+        
         $_SESSION['username'] = $username;
         $_SESSION['userid'] = $password;
 
