@@ -1,4 +1,4 @@
-### E-Commerce Shopping Website
+# E-Commerce Shopping Website
 
 ## This project is for FYP project student.
 
@@ -20,5 +20,5 @@
 Admin Username : admin123
 Admin Password : 123
 
-# For other user, you can register them by yourself at the register page. Can find it at Login page.
+#### For other user, you can register them by yourself at the register page. Can find it at Login page.
 
