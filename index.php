@@ -33,6 +33,9 @@
         //check if there is any GET passing value
         if(isset($_GET['alh'])){
 
+            //include connection for mysql
+            include('conn.php');
+
             //defined get value to menu variable
             $menu = $_GET['alh'];
 
@@ -40,15 +43,68 @@
                 case 1:
                     $filename = "user/edit_profile.php";
                     break;
+                case 2:
+                    $filename = "user/list_user.php";
+
+                    $sql = "SELECT * FROM user WHERE role != 'admin' AND status=1";
+                    
+                    //get all data that role not equal to admin
+                    $result = $conn->query($sql);
+
+                    //turn the result into array
+                    $dataresult = getdata_rowall($result);
+
+                    break;
+                
+                case 3:
+                    $filename = "product/list_product.php";
+
+                    $sql = "SELECT * FROM product WHERE status=1";
+                    
+                    //get all data that status equal to 1 (active)
+                    $result = $conn->query($sql);
+
+                    //turn the result into array
+                    $dataresult = getdata_rowall($result);
+
+                    break;
+                
+                case 4:
+                    $filename = "product/add_product.php";
+
+                    break;
                 
                 default:
                     $filename = "homepage.php";
+
+                    $sql = "SELECT * FROM product WHERE status=1";
+                    
+                    //get all data that status equal to 1 (active)
+                    $result = $conn->query($sql);
+
+                    //turn the result into array
+                    $dataresult = getdata_rowall($result);
+
                     break;
             }
 
         }else{
+
+            include('conn.php');
+
             $filename = "homepage.php";
+
+            $sql = "SELECT * FROM product WHERE status=1";
+                    
+            //get all data that status equal to 1 (active)
+            $result = $conn->query($sql);
+
+            //turn the result into array
+            $dataresult = getdata_rowall($result);
+            
         }
+
+
 
     ?>
     

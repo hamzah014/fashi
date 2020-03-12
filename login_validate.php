@@ -12,7 +12,7 @@
         //print($username . " - " . $password);
         
         
-        $sql = "SELECT * FROM user_login WHERE username='$username' AND password='$password'";
+        $sql = "SELECT * FROM user WHERE username='$username' AND password='$password'";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
@@ -21,7 +21,8 @@
                 //echo "id: " . $row["id"]. " - Name: " . $row["username"]. " " . $row["password"]. "<br>";
                 $_SESSION['username'] = $row["username"];
                 $_SESSION['userid'] = $row["id"];
-                
+                $_SESSION['userrole'] = $row["role"];
+
                 header("Location: index.php"); 
 
             }

@@ -26,6 +26,10 @@
                         <h2 class="text-white">Register</h2>
                         <form action="user/add_user.php" method="POST">
                             <div class="group-input">
+                                <label class="text-white" for="username">Fullname *</label>
+                                <input type="text" id="fullname" name="fullname" required>
+                            </div>
+                            <div class="group-input">
                                 <label class="text-white" for="username">Username *</label>
                                 <input type="text" id="username" name="username" required>
                             </div>
@@ -137,12 +141,13 @@
             }else if(pass1 == pass2){
                 $('#text-result').html('<span class="alert alert-success">Password Matched.</span>');
 
-                if(usm!=""){
-                    $('#btnrg').attr('disabled','false');
-                    $('#btnrg').css('cursor','pointer');
-                }else{
+                if(usm==""){
                     $('#btnrg').attr('disabled','true');
                     $('#btnrg').css('cursor','not-allowed');
+                }else{
+                    $('#btnrg').removeAttr('disabled');
+                    $('#btnrg').css('cursor','pointer');
+                    
                 }
 
             }else if(pass1 != pass2){

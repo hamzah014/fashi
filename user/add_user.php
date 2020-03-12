@@ -6,10 +6,11 @@
 
         $username  = $_POST['username'];
         $password  = $_POST['password'];
+        $fullname  = $_POST['fullname'];
         
         //insert into database
-        $sql = "INSERT INTO user_login (username, password, role)
-                VALUES ('$username', '$password', 'public')";
+        $sql = "INSERT INTO user (username, password, role, fullname)
+                VALUES ('$username', '$password', 'public', '$fullname')";
 
         $result = $conn->query($sql);
         

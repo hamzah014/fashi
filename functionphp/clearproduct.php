@@ -3,7 +3,7 @@
    include('../conn.php');
 
    // Execute the query.
-   $sql = "DELETE FROM user_login WHERE role!='admin'";
+   $sql = "TRUNCATE TABLE product";
 
    $result = mysqli_query($conn, $sql);
 

@@ -26,7 +26,7 @@
                                 </a>
                                 <div class="cart-hover">
                                     <div class="select-button">
-                                        <a href="index.php?alh=1a" class="primary-btn view-card">My Profile</a>
+                                        <a <?php if($_SESSION['userrole']){ echo 'hidden';} ?> href="index.php?alh=1a" class="primary-btn view-card">My Profile</a>
                                         <a href="logout.php" class="primary-btn checkout-btn">LOG OUT</a>
                                     </div>
                                 </div>
@@ -55,40 +55,40 @@
                 <div class="nav-depart" style="display: block !important;">
                     <div class="depart-btn">
                         <i class="ti-menu"></i>
-                        <span>All departments</span>
+                        <span>All Categories</span>
                         <ul class="depart-hover">
-                            <li class="active"><a href="#">Women’s Clothing</a></li>
-                            <li><a href="#">Men’s Clothing</a></li>
-                            <li><a href="#">Underwear</a></li>
-                            <li><a href="#">Kid's Clothing</a></li>
-                            <li><a href="#">Brand Fashion</a></li>
-                            <li><a href="#">Accessories/Shoes</a></li>
-                            <li><a href="#">Luxury Brands</a></li>
-                            <li><a href="#">Brand Outdoor Apparel</a></li>
+                            <li class="active"><a href="#">Skincare</a></li>
+                            <li><a href="#">Makeup</a></li>
+                            <li><a href="#">Body and Sun</a></li>
+                            <li><a href="#">Men's</a></li>
+                            <li><a href="#">Fragrance</a></li>
+                            <li><a href="#">Best Seller</a></li>
                         </ul>
                     </div>
                 </div>
                 <nav class="nav-menu mobile-menu">
                     <ul>
                         <li><a href="index.php">Home</a></li>
-                        <li><a href="./shop.html">Shop</a></li>
-                        <li><a href="#">Collection</a>
-                            <ul class="dropdown">
-                                <li><a href="#">Men's</a></li>
-                                <li><a href="#">Women's</a></li>
-                                <li><a href="#">Kid's</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="./blog.html">Blog</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
-                        <li><a href="#">Pages</a>
-                            <ul class="dropdown">
-                                <li><a href="./blog-details.html">Blog Details</a></li>
-                                <li><a href="./shopping-cart.html">Shopping Cart</a></li>
-                                <li><a href="./check-out.html">Checkout</a></li>
-                                <li><a href="./faq.html">Faq</a></li>   
-                            </ul>
-                        </li>
+                        <li><a href="index.php">Shop</a></li>
+                        <li><a href="./contact.html">About Us</a></li>
+                        <?php
+                            if(isset($_SESSION['userrole'])){
+
+                                if($_SESSION['userrole']=="admin"){
+                            ?>
+                            <li><a href="#">Admin Option</a>
+                                <ul class="dropdown">
+                                    <li><a href="index.php?alh=2">List of User</a></li>
+                                    <li><a href="index.php?alh=3">List of Product</a></li>
+                                    <li><a href="index.php?alh=4">List of Order</a></li>
+                                </ul>
+                            </li>
+                            <?php
+                                }
+
+                            }
+
+                        ?>
                     </ul>
                 </nav>
                 <div id="mobile-menu-wrap"></div>

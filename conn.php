@@ -15,7 +15,35 @@
         //die("Connection good ");
     }
 
+    function getdata_rowall($result){
 
+        //for return the result into multiple array
+
+        $index = 0;
+        $details = [];
+        while ($row = $result->fetch_assoc()) {
+            $details[$index] = $row;
+            $index++;
+        }
+
+        return $details;
+
+    }
+
+    function getdata_row($result){
+
+        //for return the result into one array
+
+        $index = 0;
+        $details = [];
+        while ($row = $result->fetch_assoc()) {
+            $details = $row;
+            $index++;
+        }
+
+        return $details;
+
+    }
 
 
 
