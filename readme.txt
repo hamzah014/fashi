@@ -1,15 +1,15 @@
-### E-Commerce Shopping Website
+###E-Commerce Shopping Website
 
-## This project is for FYP project student.
+##This project is for FYP project student.
 
-### HOW TO USE?
+###HOW TO USE?
 
-## What you need is :
+##What you need is :
 
  1. Xampp
  2. PHP native knowledge (basic also can)
 
-## Instruction
+##Instruction
 
  1. Clone the repo inside your xampp/htdocs/ folder
  2. Run the Xampp
@@ -20,5 +20,5 @@
 Admin Username : admin123
 Admin Password : 123
 
-# For other user, you can register them by yourself at the register page. Can find it at Login page.
+#For other user, you can register them by yourself at the register page. Can find it at Login page.
 
