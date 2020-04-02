@@ -22,15 +22,16 @@
                     <div class="filter-widget">
                         <h4 class="fw-title">Categories</h4>
                         <ul class="filter-catagories">
-                            <li><a href="#">Skincare</a></li>
-                            <li><a href="#">Makeup</a></li>
-                            <li><a href="#">Body & Sun</a></li>
-                            <li><a href="#">Men's</a></li>
-                            <li><a href="#">Fragrance</a></li>
+                            <li><a onclick="allcategory()">All</a></li>
+                            <li><a onclick="selectedcategory('sc')">Skincare</a></li>
+                            <li><a onclick="selectedcategory('mk')">Makeup</a></li>
+                            <li><a onclick="selectedcategory('bs')">Body & Sun</a></li>
+                            <li><a onclick="selectedcategory('men')">Men's</a></li>
+                            <li><a onclick="selectedcategory('frag')">Fragrance</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-9 order-1 order-lg-2">
+                <div class="col-lg-9 order-1 order-lg-2" id="product_area">
                     <div class="product-show-option">
                         <div class="row">
                             <div class="col-lg-7 col-md-7">
@@ -70,13 +71,27 @@
                                     <div class="pi-pic">
                                         <img style="width:270px;height:303px" src="<?php echo $routeimg . $value['product_img']; ?>" alt="">
                                         <div class="sale pp-sale">Sale</div>
-                                        <div class="icon">
-                                            <i class="icon_heart_alt"></i>
-                                        </div>
                                         <ul>
                                             <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                            <li class="quick-view"><a href="#">+ Quick View</a></li>
-                                            <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                                            <li class="quick-view">
+                                                
+                                                <?php
+
+                                                    if(isset($_SESSION['userid']) && isset($_SESSION['username'])){
+                                                ?>
+                                                        <a href="index.php?alh=5&prod=<?php echo $value['id']; ?>">+ Quick View</a>
+                                                
+                                                <?php
+                                                    }else{
+                                                ?>
+
+                                                        <a style="cursor: pointer;" onclick="tologinpage()">+ Quick View</aa>
+                                                
+                                                <?php
+                                                    }
+
+                                                ?>
+                                            </li>
                                         </ul>
                                     </div>
 
@@ -101,7 +116,7 @@
                                                     break;
                                                 
                                                 default:
-                                                    $typename = "Unknown";
+                                                    $typename = "All";
                                                     break;
                                             }
 
@@ -137,14 +152,62 @@
 
                         </div>
                     </div>
-                    <div class="loading-more">
-                        <i class="icon_loading"></i>
-                        <a href="#">
-                            Loading More
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- Product Shop Section End -->
+    
+
+    <script>
+
+        function selectedcategory(prodtype) {
+        
+            console.log(prodtype);
+
+	    	var formData = new FormData();
+	    	formData.append('prodtype',prodtype);
+            
+	    	//alert(product_image);
+	    	$.ajax({
+	    		url:'product/listcategory_product.php',
+	    		type: 'POST',
+	    		data: formData,
+	    		cache: false,
+	    		processData: false,
+	    		contentType: false,
+	    		success: function (data){
+                
+	    			//console.log(data);
+	    			
+                    $('#product_area').html(data);
+
+                
+	    		},
+	    		error: function(){
+                
+	    		}
+            
+            
+	    	});
+
+        }
+
+        function allcategory(){
+            window.location.reload();
+        }
+
+        function tologinpage(){
+
+            result = confirm('You are not login yet. Please login to see more details');
+            //console.log(result);
+            if(result==true){
+                console.log("true");
+                window.location.href = "login.php";
+            }else{
+                //console.log(result);
+            }
+
+        }
+
+    </script>

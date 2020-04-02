@@ -5,7 +5,7 @@
                     <div class="col-lg-4 col-md-4">
                         <div class="logo">
                             <a href="index.php" style="font-family: 'Squada One', cursive;font-size:22px;color:black;letter-spacing:2px">
-                                ANNE LIPPIE HOUSE
+                                <?php echo $info_shopname; ?>
                                 <!-- <img src="img/logo.png" alt=""> -->
                             </a>
                         </div>
@@ -26,7 +26,8 @@
                                 </a>
                                 <div class="cart-hover">
                                     <div class="select-button">
-                                        <a <?php if($_SESSION['userrole']){ echo 'hidden';} ?> href="index.php?alh=1a" class="primary-btn view-card">My Profile</a>
+                                        <a <?php if($_SESSION['userrole']=="admin"){ echo 'hidden';} ?> href="index.php?alh=1" class="primary-btn view-card">My Profile</a>
+                                        <a <?php if($_SESSION['userrole']=="admin"){ echo 'hidden';} ?> href="index.php?alh=7" class="btn btn-info checkout-btn">My Order</a>
                                         <a href="logout.php" class="primary-btn checkout-btn">LOG OUT</a>
                                     </div>
                                 </div>
@@ -57,12 +58,12 @@
                         <i class="ti-menu"></i>
                         <span>All Categories</span>
                         <ul class="depart-hover">
-                            <li class="active"><a href="#">Skincare</a></li>
-                            <li><a href="#">Makeup</a></li>
-                            <li><a href="#">Body and Sun</a></li>
-                            <li><a href="#">Men's</a></li>
-                            <li><a href="#">Fragrance</a></li>
-                            <li><a href="#">Best Seller</a></li>
+                            <li><a href="index.php">All</a></li>
+                            <li><a onclick="selectedcategory('sc')">Skincare</a></li>
+                            <li><a onclick="selectedcategory('mk')">Makeup</a></li>
+                            <li><a onclick="selectedcategory('bs')">Body and Sun</a></li>
+                            <li><a onclick="selectedcategory('men')">Men's</a></li>
+                            <li><a onclick="selectedcategory('frag')">Fragrance</a></li>
                         </ul>
                     </div>
                 </div>
@@ -70,7 +71,7 @@
                     <ul>
                         <li><a href="index.php">Home</a></li>
                         <li><a href="index.php">Shop</a></li>
-                        <li><a href="./contact.html">About Us</a></li>
+                        <li><a href="index.php?alh=100">Contact Us</a></li>
                         <?php
                             if(isset($_SESSION['userrole'])){
 
@@ -80,7 +81,7 @@
                                 <ul class="dropdown">
                                     <li><a href="index.php?alh=2">List of User</a></li>
                                     <li><a href="index.php?alh=3">List of Product</a></li>
-                                    <li><a href="index.php?alh=4">List of Order</a></li>
+                                    <li><a href="index.php?alh=8">List of Order</a></li>
                                 </ul>
                             </li>
                             <?php

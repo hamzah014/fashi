@@ -4,12 +4,15 @@
                 <div class="col-lg-3">
                     <div class="footer-left">
                         <div class="footer-logo">
-                            <a href="#"><img src="img/footer-logo.png" alt=""></a>
+                            <a href="index.php" style="font-family: 'Squada One', cursive;font-size:22px;color:white;letter-spacing:2px">
+                                <?php echo $info_shopname; ?>
+                            </a>
+                            <!-- <a href="#"><img src="img/footer-logo.png" alt=""></a> -->
                         </div>
                         <ul>
-                            <li>Address: 60-49 Road 11378 New York</li>
-                            <li>Phone: +65 11.188.888</li>
-                            <li>Email: hello.colorlib@gmail.com</li>
+                            <li>Address: <?php echo $info_address; ?></li>
+                            <li>Phone: <?php echo $info_contactno; ?></li>
+                            <li>Email: <?php echo $info_email; ?></li>
                         </ul>
                         <div class="footer-social">
                             <a href="#"><i class="fa fa-facebook"></i></a>

@@ -4,11 +4,11 @@
                 <div class="ht-left">
                     <div class="mail-service">
                         <i class=" fa fa-envelope"></i>
-                        annelippehouse@gmail.com
+                        <?php echo $info_email; ?>
                     </div>
                     <div class="phone-service">
                         <i class=" fa fa-phone"></i>
-                        03 26544 545
+                        <?php echo $info_contactno; ?>
                     </div>
                 </div>
                 <div class="ht-right">
