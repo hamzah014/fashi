@@ -20,6 +20,7 @@
 Admin Username : admin123
 Admin Password : 123
 
+#### For other user, you can register them by yourself at the register page. Can find it at Login page.
 
 ## System Info
 
@@ -31,5 +32,4 @@ Admin Password : 123
       4. Writer name (footer)
       5. Contact number (header,footer)
 
-#### For other user, you can register them by yourself at the register page. Can find it at Login page.
 
