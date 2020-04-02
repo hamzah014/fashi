@@ -20,5 +20,16 @@
 Admin Username : admin123
 Admin Password : 123
 
+
+## System Info
+
+ ### You can update the info at the admin/info_system.php
+ ### Things that you can changes :
+      1. Shop name (tab title, top logo name, footer logo name)
+      2. Address
+      3. Email
+      4. Writer name (footer)
+      5. Contact number (header,footer)
+
 #### For other user, you can register them by yourself at the register page. Can find it at Login page.
 
