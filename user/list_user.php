@@ -58,8 +58,22 @@
                             <td><?php echo $value['contactno']; ?></td>
                             <td><?php echo $value['address']; ?></td>
                             <td>
-                                <button class="btn btn-info">Show Details</button>
-                                <button class="btn btn-danger">Deactivated</button>
+                            
+                            <?php
+                                if($value['status']==1){
+                            ?>
+                            
+                                <button class="btn btn-danger" onclick="updatestatus_user('deactivate',<?php echo $value['id']; ?>)">Deactivate</button>
+
+                            <?php
+                                }else{
+                            ?>
+
+                                <button class="btn btn-success" onclick="updatestatus_user('activate',<?php echo $value['id']; ?>)">Activate</button>
+
+                            <?php
+                                }
+                            ?>
                             </td>
                         </tr>
 
@@ -99,9 +113,40 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
 
     <script type="text/javascript">
-    $(document).ready(function() {
-        
-        $('#table_listuser').DataTable();
-    
-    });
-</script>
+
+        function updatestatus_user(actions,userid) {
+
+            console.log(actions + " --- " + userid);
+            
+		    var formData = new FormData();
+		    formData.append('actions',actions);
+		    formData.append('userid',userid);
+            
+		    $.ajax({
+		    	url:'user/updatestatus_user.php',
+		    	type: 'POST',
+		    	data: formData,
+		    	cache: false,
+		    	processData: false,
+		    	contentType: false,
+		    	success: function (data){
+                
+		    		console.log(data);
+                    if(data==1){
+                        alert('The user has been successfully updated');
+                    }else{
+                        alert('Error occurred, failed to update the user status. Please try again later.');
+                    }
+                    window.location.reload();
+                
+		    	},
+		    	error: function(){
+                
+		    	}
+            
+            
+		    });
+        }
+
+
+    </script>

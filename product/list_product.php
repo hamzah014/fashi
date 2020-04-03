@@ -38,7 +38,7 @@
                 <br>
                 
                 <table id="table_listuser" class="table table-striped table-bordered">
-                    <thead>
+                    <thead style="background:gray;">
                         <tr>
                             <th>No.</th>
                             <th>Name</th>
@@ -98,9 +98,8 @@
                             <td>RM <?php echo bcadd( $value['price'],'0',2); //turn string into two decimal place ?></td>
                             <td><img class="prod-img" src="<?php echo $routeimg . $value['product_img']; ?>" ></td>
                             <td>
-                                <button class="btn btn-info">Show Details</button>
-                                <button class="btn btn-success">Edit</button>
-                                <button class="btn btn-danger">Delete</button>
+                                <a class="btn btn-success" href="index.php?alh=9&prodid=<?php echo $value['id']; ?>">Edit</a>
+                                <button class="btn btn-danger" onclick="product_delete(<?php echo $value['id']; ?>)">Delete</button>
                             </td>
                         </tr>
 
@@ -140,9 +139,50 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
 
     <script type="text/javascript">
-    $(document).ready(function() {
-        
-        $('#table_listuser').DataTable();
     
-    });
-</script>
+        function product_delete(prodid) {
+
+            console.log(prodid);
+            
+		    var formData = new FormData();
+		    formData.append('prodid',prodid);
+
+            var answers = confirm('Are you sure want to delete this product?');
+
+            if(answers==false){
+
+            }else{
+
+
+		        $.ajax({
+		        	url:'product/delete_product.php',
+		        	type: 'POST',
+		        	data: formData,
+		        	cache: false,
+		        	processData: false,
+		        	contentType: false,
+		        	success: function (data){
+                    
+		        		console.log(data);
+                        if(data==1){
+                            alert('The product has been successfully deleted');
+                        }else{
+                            alert('Error occurred, failed to delete the product. Please try again later.');
+                        }
+                        window.location.reload();
+                    
+		        	},
+		        	error: function(){
+                    
+		        	}
+                
+                
+		        });
+
+            }
+        }
+
+
+
+
+    </script>

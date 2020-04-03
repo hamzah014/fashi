@@ -5,7 +5,9 @@
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
-    if (move_uploaded_file($_FILES["product_img"]["tmp_name"], $target_file)) {
+    $imagename = "PRD" . $prodid . date("Ymdhis") . "." . $imageFileType;
+
+    if (move_uploaded_file($_FILES["product_img"]["tmp_name"], $target_dir . $imagename)) {
         
         include('../conn.php');
 
@@ -20,14 +22,15 @@
         $product_img    = basename($_FILES["product_img"]["name"]);
 
         $sql = "INSERT INTO product (name,details,type,price,product_img)
-                VALUES ('$name','$details','$type','$price','$product_img')";
+                VALUES ('$name','$details','$type','$price','$imagename')";
 
         $result = $conn->query($sql);
         //echo("Error description: " . $conn -> error);
         echo '<script>alert("Add product successfully");</script>';
 
         //redirect to index
-        header("Location: ../index.php?alh=4");
+        //header("Location: ../index.php?alh=4");
+        echo '<script>window.location.href = "../index.php?alh=4";</script>';
 
 
     } else {

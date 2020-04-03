@@ -49,7 +49,7 @@
                 case 2:
                     $filename = "user/list_user.php";
 
-                    $sql = "SELECT * FROM user WHERE role != 'admin' AND status=1";
+                    $sql = "SELECT * FROM user WHERE role != 'admin'";
                     
                     //get all data that role not equal to admin
                     $result = $conn->query($sql);
@@ -169,6 +169,24 @@
                     //get all data that status equal to 1 (active)
                     $result = $conn->query($sql);
                     $dataresult = getdata_rowall($result);
+                    
+                    //echo count($dataresult);
+                    //print_r($dataresult);
+                    
+
+                    break;
+                
+                case 9:
+
+                    $filename = "product/edit_product.php";
+
+                    $prodid = $_GET['prodid']; 
+
+                    $sql = "SELECT * FROM product WHERE id='$prodid'";
+
+                    //get all data that status equal to 1 (active)
+                    $result = $conn->query($sql);
+                    $dataresult = getdata_row($result);
                     
                     //echo count($dataresult);
                     //print_r($dataresult);

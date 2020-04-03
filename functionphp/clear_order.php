@@ -3,7 +3,7 @@
    include('../conn.php');
 
    // Execute the query.
-   $sql = "TRUNCATE TABLE product";
+   $sql = "TRUNCATE TABLE order_product";
 
    $result = mysqli_query($conn, $sql);
 
