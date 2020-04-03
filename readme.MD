@@ -14,7 +14,7 @@
 
  1. Clone the repo inside your xampp/htdocs/ folder
  2. Run the Xampp
- 3. Import database inside folder "database" in phpmyadmin database (see the datetime to see latest one).
+ 3. Import database inside folder "database" in phpmyadmin database (see the datetime to see latest one - DDMMYYYY).
  4. Name the database "anne_lippie".
  5. Run the website. Try to login.
 
