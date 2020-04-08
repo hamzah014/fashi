@@ -49,6 +49,7 @@
     $info_email           = $dataresult['email'];          
     $info_shopname        = $dataresult['shopname'];      
     $info_writer          = $dataresult['writer'];      
+    $info_aboutus              = $dataresult['aboutus'];      
 
 
 

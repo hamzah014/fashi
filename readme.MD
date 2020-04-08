@@ -18,8 +18,8 @@
  4. Name the database "anne_lippie".
  5. Run the website. Try to login.
 
-Admin Username : admin123
-Admin Password : 123
+ * Admin Username : admin123
+ * Admin Password : 123
 
 #### For other user, you can register them by yourself at the register page. Can find it at Login page.
 

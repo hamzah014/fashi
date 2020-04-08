@@ -26,10 +26,9 @@
                     <div class="footer-widget">
                         <h5>Information</h5>
                         <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Checkout</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Serivius</a></li>
+                            <li><a href="index.php">Home</a></li>
+                            <li><a href="index.php">Shop</a></li>
+                            <li><a href="index.php?alh=100">About Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -37,10 +36,25 @@
                     <div class="footer-widget">
                         <h5>My Account</h5>
                         <ul>
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Shopping Cart</a></li>
-                            <li><a href="#">Shop</a></li>
+                            <?php
+
+                                if(isset($_SESSION['userid']) && isset($_SESSION['username'])){
+                            ?>
+
+                            <li><a href="index.php?alh=1">My Profile</a></li>
+                            <li><a href="index.php?alh=7">My Order</a></li>
+                            
+                            <?php
+                                }else{
+                            ?>
+
+                            <li><a href="login.php">Login</a></li>
+                            <li><a href="register.php">Register</a></li>
+
+                            <?php
+                                }
+
+                            ?>
                         </ul>
                     </div>
                 </div>

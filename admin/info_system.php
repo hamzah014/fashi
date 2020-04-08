@@ -21,6 +21,7 @@
     $email           = $dataresult['email'];          
     $shopname        = $dataresult['shopname'];      
     $writer          = $dataresult['writer'];      
+    $aboutus         = $dataresult['aboutus'];      
 
 
 
@@ -59,6 +60,12 @@
 
     Email
     <input type="email" name="email" id="email" value="<?php echo $email; ?>">
+
+    <br>
+    <br>
+
+    About Us
+    <textarea name="aboutus" id="aboutus" cols="30" rows="10"><?php echo $aboutus; ?></textarea>
 
     <br>
 

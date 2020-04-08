@@ -8,12 +8,14 @@
     $email           = $_POST['email'];          
     $shopname        = $_POST['shopname']; 
     $writer          = $_POST['writer']; 
+    $aboutus         = $_POST['aboutus']; 
 
     $sql = "UPDATE infosystem SET 
     address='$address', 
     contactno='$contactno', 
     email='$email', 
     writer='$writer', 
+    aboutus='$aboutus', 
     shopname='$shopname' 
     WHERE id='$id'";
 

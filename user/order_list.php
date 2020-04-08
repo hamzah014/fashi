@@ -44,7 +44,13 @@
                             </thead>
                             <tbody>
                                 <?php
-                                    if( sizeof($dataresult) < 0 ){
+                                    
+                                    $totalspend = 0;
+
+                                    //check if there is data exist
+                                    if( sizeof($dataresult) < 1 ){
+
+                                        //if data is empty
                                 ?>
                                         <tr>
                                             <td class="alert alert-warning text-center" colspan="20">Sorry, you haven't make any order yet.</td>
@@ -53,8 +59,7 @@
                                 <?php    
                                     }else{
                                         
-                                        $totalspend = 0;
-
+                                        //if data is not empty
                                         foreach($dataresult as $key => $value){
 
                                                 //defined the location of product images
@@ -108,13 +113,14 @@
                                                 <td class="cart-pic first-row p-3">
                                                     <?php
                                                         if($status=="success"){
-                                                            
+                                                            //display success button
                                                     ?>        
                                                         
                                                         <button class="btn btn-success btn-md" disabled>Success</button>
 
                                                     <?php
                                                         }else{
+                                                            //display received button when status is not success yet
        
                                                     ?>   
                                                         
@@ -157,12 +163,15 @@
 
     function receivedorder(orderid) {
         
+        //get order id - orderid
         console.log(orderid);
 
 		var formData = new FormData();
 		formData.append('orderid',orderid);
 		
 		//alert(product_image);
+
+        //use ajax to changes the order status
 		$.ajax({
 			url:'user/received_order.php',
 			type: 'POST',
@@ -174,12 +183,15 @@
 				
 				console.log(data);
 				if(data==1){
+                    //if order is successfully updated
                     alert('Your item has been updated! Thank you!');
                 }else{
+                    //if order is failed to updated
                     alert('Sorry, error occured. Please try again.');
 
                 }
 				
+                //reload the current page
                 window.location.reload();
 				
 			},
